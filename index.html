@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Beginner Tailwind</title>
+  </head>
+  <body class="bg-sky-100 min-h-screen">
+    <div class="sm:flex sm:justify-center sm:items-center sm:min-h-screen">
+      <div
+        class="card-container w-full sm:w-3/5 sm:flex overflow-hidden bg-white sm:rounded-3xl"
+      >
+        <div
+          class="form-container w-full sm:w-1/2 bg-white p-4 sm:rounded-l-3xl"
+        >
+          <div class="heading sm:flex sm:justify-between">
+            <p
+              class="font-jakarta-bold text-2xl text-gray-800 font-medium mb-2"
+            >
+              Mortgage Calculator
+            </p>
+            <button
+              class="clear_btn mr-4 border-b-2 px-2 font-jakarta text-gray-800 font-medium hover:cursor-pointer hover:bg-amber-500 hover:rounded-full"
+            >
+              Clear All
+            </button>
+          </div>
+
+          <form action="#" class="form p-4">
+            <label
+              for="Mort_amt"
+              class="font-jakarta font-normal text-gray-800 block"
+              >Mortgage Amount:</label
+            >
+            <div class="amount_box relative">
+              <input
+                type="text"
+                class="amount_value block w-full mt-2 border sm:rounded-xl p-2 relative z-10 text-center focus:border-none focus:outline-none focus:ring-2 focus:ring-[#E3EB00]"
+                id="Mort_amt"
+                required
+                name="Mort_amt"
+              />
+              <span class="text-red-500 text-sm hidden h-5 block" id="error-amt"
+                >This field is required</span
+              >
+              <div
+                class="icon bg-[#E3EB00] p-2 absolute top-0 left-0 sm:rounded-l-xl size-10.5 text-center"
+              >
+                £
+              </div>
+            </div>
+            <div class="details mt-4 sm:flex">
+              <div class="details-1 relative">
+                <label
+                  for="Mort_term"
+                  class="font-jakarta font-normal text-gray-800 block mb-2"
+                  >Mortgage Term</label
+                >
+                <input
+                  type="text"
+                  required
+                  class="mort_term mt-2 sm:p-1 w-full p-2 border sm:rounded-lg focus:border-none text-center focus:outline-none focus:ring-2 focus:ring-[#E3EB00]"
+                  id="Mort_term"
+                  name="Mort_term"
+                />
+                <span
+                  class="text-red-500 text-sm hidden h-5 block"
+                  id="error-term"
+                  >This field is required</span
+                >
+                <div
+                  class="icon bg-blue-50 absolute top-10.5 right-[0.1rem] p-[0.6rem] w-24 sm:top-[2.6rem] sm:left-[0.08rem] sm:w-21 sm:p-[0.38rem] text-center text-gray-700 sm:rounded-r-lg text-sm"
+                >
+                  years
+                </div>
+              </div>
+              <div class="details-2 sm:ml-2 relative">
+                <label
+                  for="interest"
+                  class="font-jakarta font-normal text-gray-800 block mb-2 ml-4"
+                  >Interest Rate</label
+                >
+                <input
+                  type="text"
+                  class="interest_rate mt-2 sm:p-1 p-2 w-full border sm:rounded-lg sm:ml-4 text-center focus:border-none focus:outline-none focus:ring-2 focus:ring-[#E3EB00]"
+                  required
+                  id="interest"
+                  name="interest"
+                />
+                <span
+                  class="text-red-500 text-sm hidden h-5 block"
+                  id="error-interest"
+                  >This field is required</span
+                >
+                <div
+                  class="icon bg-blue-50 absolute top-10.5 p-[0.6rem] w-24 right-[0.1rem] sm:top-[2.55rem] sm:-right-[0.75rem] sm:w-21 sm:p-[0.4rem] text-center text-gray-700 sm:rounded-r-lg text-sm"
+                >
+                  %
+                </div>
+              </div>
+            </div>
+            <div class="radio">
+              <span
+                class="font-jakarta font-normal text-gray-800 block mt-4 mb-2"
+                >Mortgage Type:
+              </span>
+              <label
+                for="repayment"
+                class="repayment flex items-center gap-2 border sm:rounded-lg px-4 py-2 mb-2 cursor-pointer hover:border-[#E3EB00] hover:bg-[rgba(227,235,0,0.3)]"
+              >
+                <input
+                  type="radio"
+                  name="radioBtn"
+                  id="repayment"
+                  value="repayment"
+                  class="accent-[#E3EB00] scale-125"
+                />
+                <span class="font-jakarta font-normal text-gray-800"
+                  >Repayment</span
+                >
+              </label>
+              <label
+                for="interestOnly"
+                class="flex items-center gap-2 border sm:rounded-lg px-4 py-2 cursor-pointer hover:border-[#E3EB00] hover:bg-[rgba(227,235,0,0.3)]"
+              >
+                <input
+                  type="radio"
+                  name="radioBtn"
+                  id="interestOnly"
+                  value="interestOnly"
+                  class="accent-[#E3EB00] scale-125"
+                />
+                <span class="font-jakarta font-normal text-gray-800"
+                  >Interest Only</span
+                >
+              </label>
+            </div>
+            <button
+              type="submit"
+              class="submitBtn bg-[#E3EB00] p-4 w-full rounded-full sm:p-4 sm:w-1/2 font-jakarta font-normal text-gray-800 sm:m-4 mt-6 sm:rounded-lg"
+            >
+              <img
+                src="assets/images/Calculator-Icon--Streamline-Emojitwo.png"
+                class="inline-block"
+              />
+              Calculate Repayments
+            </button>
+          </form>
+        </div>
+
+        <div
+          class="result_container relative p-4 sm:w-1/2 bg-[#0A2E38] sm:rounded-r-3xl sm:rounded-bl-[8rem] z-10"
+        >
+          <div class="flex justify-center items-center">
+            <div class="result flex justify-around">
+              <img
+                src="assets/images/illustration-empty.svg"
+                alt="illustration-empty"
+                class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4"
+              />
+              <div
+                class="result_text mt-60 flex flex-col justify-center items-center"
+              >
+                <h2 class="font-jakarta-bold text-white text-2xl">
+                  Results Shown Here
+                </h2>
+                <p class="font-jakarta text-gray-400 text-lg mt-2 text-center">
+                  Complete the form and click "calculate Repayments" to see what
+                  your monthly repayments should be.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/main.js" type="module"></script>
+  </body>
+</html>
